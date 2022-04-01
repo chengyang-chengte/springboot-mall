@@ -1,6 +1,7 @@
 package com.kujudy.springbootmall.service;
 
 import com.kujudy.springbootmall.constant.ProductCategory;
+import com.kujudy.springbootmall.dto.ProductQueryParams;
 import com.kujudy.springbootmall.dto.ProductRequest;
 import com.kujudy.springbootmall.model.Product;
 
@@ -18,7 +19,7 @@ import java.util.List;
  * [序號][日期] [更改人姓名][變更描述]
  */
 public interface ProductService {
-    List<Product> getProducts(ProductCategory category,String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
