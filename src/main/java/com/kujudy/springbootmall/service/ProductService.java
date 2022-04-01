@@ -3,6 +3,8 @@ package com.kujudy.springbootmall.service;
 import com.kujudy.springbootmall.dto.ProductRequest;
 import com.kujudy.springbootmall.model.Product;
 
+import java.util.List;
+
 /**
  * <p>公司訊息: ChengYang Info</p>
  * <p>專案名稱: springboot-mall </p>
@@ -15,9 +17,13 @@ import com.kujudy.springbootmall.model.Product;
  * [序號][日期] [更改人姓名][變更描述]
  */
 public interface ProductService {
+    List<Product> getProducts();
+
     Product getProductById(Integer productId);
 
     Integer createProduct(ProductRequest productRequest);
 
     void updateProduct(Integer productId, ProductRequest productRequest);
+
+    void deleteProductById(Integer productId);
 }

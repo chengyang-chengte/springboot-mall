@@ -7,6 +7,8 @@ import com.kujudy.springbootmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * <p>公司訊息: ChengYang Info</p>
  * <p>專案名稱: springboot-mall </p>
@@ -24,6 +26,11 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
+    public List<Product> getProducts() {
+        return productDao.getProducts();
+    }
+
+    @Override
     public Product getProductById(Integer productId) {
 
         return productDao.getProductById(productId);
@@ -37,5 +44,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void updateProduct(Integer productId, ProductRequest productRequest) {
         productDao.updateProduct(productId, productRequest);
+    }
+
+    @Override
+    public void deleteProductById(Integer productId) {
+        productDao.deleteProductById(productId);
     }
 }
