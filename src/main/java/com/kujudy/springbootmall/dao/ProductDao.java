@@ -1,5 +1,6 @@
 package com.kujudy.springbootmall.dao;
 
+import com.kujudy.springbootmall.constant.ProductCategory;
 import com.kujudy.springbootmall.dto.ProductRequest;
 import com.kujudy.springbootmall.model.Product;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * [序號][日期] [更改人姓名][變更描述]
  */
 public interface ProductDao {
-    List<Product> getProducts();
+    List<Product> getProducts(ProductCategory category, String search);
 
     Product getProductById(Integer productId);
 
